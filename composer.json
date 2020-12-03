@@ -1,9 +1,9 @@
 {
-    "name": "rennokki/laravel-eloquent-query-cache",
+    "name": "megaads/laravel-query-cache",
     "description": "Adding cache on your Laravel Eloquent queries' results is now a breeze.",
     "keywords": ["laravel", "caching", "eloquent", "remember", "query", "sql"],
     "license": "Apache-2.0",
-    "homepage": "https://github.com/renoki-co/laravel-eloquent-query-cache",
+    "homepage": "https://github.com/megaads-vn/laravel-eloquent-query-cache",
     "authors": [
         {
             "name": "Alex Renoki",
