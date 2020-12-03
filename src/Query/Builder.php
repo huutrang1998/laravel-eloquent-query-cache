@@ -20,6 +20,24 @@ class Builder extends BaseBuilder implements QueryCacheModuleInterface
             : $this->getFromQueryCache('get', $columns);
     }
 
+    public function update(array $values)
+    {
+        $this->flushCacheforUpdateTable($this->cacheBaseTags);
+        return parent::update($values);
+    }
+
+    public function create(array $attributes = [])
+    {
+        $this->flushCacheforUpdateTable($this->cacheBaseTags);   
+        return parent::create($attributes);
+    }
+
+    public function delete($id = null)
+    {
+        $this->flushCacheforUpdateTable($this->cacheBaseTags);
+        return parent::delete($id);
+    }
+
     /**
      * {@inheritdoc}
      */

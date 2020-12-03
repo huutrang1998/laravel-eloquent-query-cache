@@ -44,7 +44,7 @@ trait QueryCacheModule
      *
      * @var string
      */
-    protected $cachePrefix = 'leqc';
+    protected $cachePrefix = 'Model';
 
     /**
      * Specify if the key that should be used when caching the query
@@ -84,6 +84,15 @@ trait QueryCacheModule
         }
 
         return $cache->rememberForever($key, $callback);
+    }
+
+    public function flushCacheforUpdateTable($tags)
+    {
+        if (! $tags) {
+           return;
+        } else {
+            $this->flushQueryCache($tags);
+        }
     }
 
     /**
@@ -196,7 +205,7 @@ trait QueryCacheModule
         try {
             return $cache->tags($tag)->flush();
         } catch (BadMethodCallException $e) {
-            return $cache->flush();
+            return;
         }
     }
 
